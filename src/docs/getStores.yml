@@ -1,0 +1,14 @@
+/stores:
+  get:
+    summary: Get all the stores
+    description: Get all the stores from the database
+    tags: [Stores]
+    responses:
+      "200":
+        content:
+          application/json:
+            examples:
+              success:
+                data:
+                  name: St_Albans
+                  postcode: AL1 2RJ

@@ -1,0 +1,28 @@
+/latandlong-of-onestore:
+  get:
+    summary: Get the latitude and longitude of a store
+    description: Get the latitude and longitude of a store by its postcode
+    tags: [Stores]
+    parameters:
+      - in: query
+        name: postcode
+        required: true
+        schema:
+          type: string
+        description: Postcode of the store
+        example: AL1 2RJ
+    responses:
+      "200":
+        content:
+          application/json:
+            examples:
+              success:
+                data:
+                  latitude: 1.1233422
+                  longitude: -3.0984848
+      "400":
+        content:
+          application/json:
+            examples:
+              error:
+                data: Invalid postcode. Please enter a valid postcode

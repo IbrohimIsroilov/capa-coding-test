@@ -1,0 +1,14 @@
+/latandlong-of-stores:
+  get:
+    summary: Get the latitude and longitude of all stores
+    description: Get the latitude and longitude of all stores
+    tags: [Stores]
+    responses:
+      "200":
+        content:
+          application/json:
+            examples:
+              success:
+                data:
+                  latitude: 1.1233422
+                  longitude: -3.0984848

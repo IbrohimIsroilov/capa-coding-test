@@ -1,0 +1,28 @@
+/store:
+  get:
+    summary: Get one specific store
+    description: Get one specific store by its name
+    tags: [Stores]
+    parameters:
+      - in: query
+        name: name
+        required: true
+        schema:
+          type: string
+        description: Name of the store
+        example: St_Albans
+    responses:
+      "200":
+        content:
+          application/json:
+            examples:
+              success:
+                data:
+                  name: St_Albans
+                  postcode: AL1 2RJ
+      "400":
+        content:
+          application/json:
+            examples:
+              error:
+                data: There is no such store with this name. Please enter another store name

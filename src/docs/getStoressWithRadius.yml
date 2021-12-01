@@ -1,0 +1,37 @@
+/stores-with-radius:
+  get:
+    summary: Get a list of stores in a given radius of a given postcode in the UK
+    description: The results are ordered from north to south with help of northings
+    tags: [Stores]
+    parameters:
+      - in: query
+        name: postcode
+        required: true
+        schema:
+          type: string
+        description: Postcode of the store
+        example: AL1 2RJ
+      - in: query
+        name: radius
+        required: true
+        schema:
+          type: number
+        description: Radius should be between 1 and 2000 as the external api I am using only allows numbers between these ranges
+        example: 100
+    responses:
+      "200":
+        content:
+          application/json:
+            examples:
+              success:
+                data:
+                  postcode: RM1 2DF
+                  country: England
+                  latitude: 1.1233422
+                  longitude: -3.0984848
+      "400":
+        content:
+          application/json:
+            examples:
+              error:
+                data: There are no stores near
